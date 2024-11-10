@@ -1,0 +1,12 @@
+/* 按钮样式 */
+.bg-olive {
+  background-color: #2d8cf0!important;
+}
+
+.modal-dialog {
+  width: 650px!important;
+}
+
+.loginmanage .loginform {
+  border-radius: 20px!important;
+}

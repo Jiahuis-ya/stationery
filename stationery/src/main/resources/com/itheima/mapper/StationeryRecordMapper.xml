@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.StationeryRecordMapper">
+    <insert id="addRecord">
+        insert into stationery_record(record_id,record_ids,record_name,record_borrower,record_borrower_id,record_nums,record_borrow_time,record_return_time)
+        values (#{record_id},#{record_ids},#{record_name},#{record_borrower},#{record_borrower_id},#{record_nums},#{record_borrow_time},#{record_return_time})
+    </insert>
+</mapper>

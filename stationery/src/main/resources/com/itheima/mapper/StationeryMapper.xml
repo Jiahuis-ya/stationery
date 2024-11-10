@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.StationeryMapper">
+    <!--新增文具-->
+    <insert id="addStationery" parameterType="com.itheima.domain.Stationery">
+        insert into stationery_requisition(id,name,ids,department,specification,price,upload_time,status,borrower,borrower_id,borrow_time,nums,return_time)
+        values (#{id},#{name},#{ids},#{department},#{specification},#{price},#{upload_time},#{status},#{borrower},#{borrower_id},#{borrow_time},#{nums},#{return_time})
+    </insert>
+    <!--修改stationery_requisition信息-->
+    <update id="editStationery" >
+        update stationery_requisition
+        <trim prefix="set" suffixOverrides=",">
+            <if test="ids != null" >
+                ids = #{ids},
+            </if>
+            <if test="name != null" >
+                name = #{name},
+            </if>
+            <if test="department != null" >
+                department = #{department},
+            </if>
+            <if test="specification != null" >
+                specification = #{specification},
+            </if>
+            <if test="price != null" >
+                price = #{price},
+            </if>
+            <if test="upload_time != null" >
+                upload_time = #{upload_time},
+            </if>
+            <if test="status != null" >
+                status = #{status},
+            </if>
+            <if test="borrower!= null" >
+                borrower= #{borrower},
+            </if>
+            <if test="borrower_id!= null" >
+                borrower_id= #{borrower_id},
+            </if>
+            <if test="borrow_time != null" >
+                borrow_time = #{borrow_time},
+            </if>
+            <if test="nums != null" >
+                nums = #{nums},
+            </if>
+            <if test="return_time != null" >
+                return_time = #{return_time}
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+</mapper>
